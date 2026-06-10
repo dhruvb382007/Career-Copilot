@@ -1,0 +1,5 @@
+[DB] Initialized at C:\Website\career-copilot\backend\career_copilot.db
+[Server] Serving frontend from: C:\Website\career-copilot
+[Server] Starting on http://localhost:5000
+ * Serving Flask app 'server'
+ * Debug mode: on

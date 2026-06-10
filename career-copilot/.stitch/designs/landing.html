@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerCopilot — Your AI Career Navigator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#292932",
+                        "on-primary-container": "#0d0096",
+                        "surface-variant": "#33343d",
+                        "inverse-on-surface": "#2f3038",
+                        "surface-bright": "#383941",
+                        "on-surface": "#e3e1ec",
+                        "outline-variant": "#464554",
+                        "tertiary-fixed": "#acedff",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-primary": "#1000a9",
+                        "tertiary": "#4cd7f6",
+                        "surface-container-lowest": "#0d0e15",
+                        "on-tertiary-fixed": "#001f26",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#003640",
+                        "secondary": "#d0bcff",
+                        "surface": "#12131a",
+                        "background": "#12131a",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary": "#3c0091",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#33343d",
+                        "inverse-primary": "#494bd6",
+                        "secondary-fixed": "#e9ddff",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#07006c",
+                        "surface-dim": "#12131a",
+                        "surface-container": "#1e1f27",
+                        "surface-container-low": "#1a1b23",
+                        "secondary-container": "#571bc1",
+                        "on-secondary-fixed": "#23005c",
+                        "inverse-surface": "#e3e1ec",
+                        "outline": "#908fa0",
+                        "primary": "#c0c1ff",
+                        "on-surface-variant": "#c7c4d7",
+                        "primary-container": "#8083ff",
+                        "on-tertiary-container": "#002f38",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "tertiary-container": "#009eb9",
+                        "on-background": "#e3e1ec",
+                        "on-secondary-container": "#c4abff",
+                        "surface-tint": "#c0c1ff",
+                        "on-error": "#690005"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #07080f; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(7, 8, 15, 0) 70%);
+        }
+        .text-gradient {
+            background: linear-gradient(45deg, #c0c1ff, #d0bcff, #4cd7f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+        .shimmer-btn:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+    </style>
+</head>
+<body class="text-on-surface min-h-screen flex flex-col selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#07080f]/70 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2 text-xl font-black text-white">
+<span class="material-symbols-outlined text-indigo-500" data-icon="rocket_launch">rocket_launch</span>
+<span>CareerCopilot</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white border-b-2 border-indigo-500 pb-1 font-['Inter'] font-black tracking-tight uppercase text-sm" href="#">Dashboard</a>
+<a class="text-gray-400 hover:text-white transition-colors font-['Inter'] font-black tracking-tight uppercase text-sm" href="#">Roadmap</a>
+<a class="text-gray-400 hover:text-white transition-colors font-['Inter'] font-black tracking-tight uppercase text-sm" href="#">Skills</a>
+<a class="text-gray-400 hover:text-white transition-colors font-['Inter'] font-black tracking-tight uppercase text-sm" href="#">Insights</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 text-indigo-400 text-xs font-black uppercase tracking-widest scale-95 active:scale-90 transition-transform">
+                    AI-Powered
+                </button>
+<div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden bg-surface-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a confident expression, soft studio lighting, high-end photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCfrSmpyPTrYVla9QeFsYvbAgr8Od5bIaph6GS5knzWK6Lprq9aX59SiWOgodnvbXowvW_nf55TIxsAS96fHzdnLvvm0x_5fliUKBhueew3_UJzh0vWpynrrAZ45rnLGCE8x_jxeSFPI3ZJ3DRUj0XpFe1Yso8vLS9-gLju-YLD76-1y5Kx95KKix7CyE6y9aqN4phbwRNRZ1ECu7zlaBOpg8KY1dYkuRw71ttzDX_m-Q_aLKiSfl6ziN-QyI29XnIR9BRg55xRCw"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-20 relative overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 hero-glow -z-10"></div>
+<div class="absolute top-1/4 left-1/4 w-1 h-1 bg-indigo-500 rounded-full blur-[1px]"></div>
+<div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-violet-400 rounded-full blur-[1px]"></div>
+<div class="absolute bottom-1/4 left-1/2 w-1 h-1 bg-tertiary rounded-full blur-[1px]"></div>
+<div class="max-w-4xl mx-auto px-6">
+<!-- Hero Section -->
+<div class="text-center mb-16">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[10px] font-bold tracking-[0.15em] mb-8">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    YOUR PERSONAL CAREER NAVIGATOR
+                </div>
+<h1 class="text-5xl md:text-[72px] font-black leading-tight tracking-[-0.04em] text-white mb-6">
+                    Turn Your Resume Into <br/>
+<span class="text-gradient">A Career Roadmap</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Paste your resume and target role. Get an instant skill gap analysis, readiness score, and a week-by-week action plan — all powered by AI.
+                </p>
+</div>
+<!-- Main Input Card -->
+<section class="bg-[#0d0f1a] backdrop-blur-2xl rounded-xl border border-white/10 p-8 md:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_15px_rgba(99,102,241,0.08)]">
+<div class="space-y-8">
+<!-- Resume Section -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="flex items-center gap-2 text-indigo-400 font-bold text-xs tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+                                RESUME / CV TEXT
+                            </label>
+<button class="text-[10px] font-bold tracking-widest uppercase text-indigo-400/80 hover:text-indigo-400 border border-dashed border-indigo-400/30 px-3 py-1 rounded transition-colors">
+                                Load Sample Resume
+                            </button>
+</div>
+<textarea class="w-full min-h-[220px] bg-surface-container-highest/50 border-0 focus:ring-2 focus:ring-tertiary/50 rounded-xl text-on-surface-variant placeholder:text-gray-600 p-6 transition-all" placeholder="Paste your full resume here…"></textarea>
+</div>
+<!-- Row Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-4">
+<label class="flex items-center gap-2 text-indigo-400 font-bold text-xs tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="track_changes">track_changes</span>
+                                TARGET ROLE
+                            </label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest/50 border-0 focus:ring-2 focus:ring-tertiary/50 rounded-xl py-4 px-6 text-on-surface-variant placeholder:text-gray-600" placeholder="e.g. Full Stack Developer..." type="text"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="flex items-center gap-2 text-indigo-400 font-bold text-xs tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                                GEMINI API KEY
+                            </label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest/50 border-0 focus:ring-2 focus:ring-tertiary/50 rounded-xl py-4 px-6 text-on-surface-variant placeholder:text-gray-600" placeholder="AIza..." type="password"/>
+<p class="text-[10px] text-tertiary/60 mt-2 font-medium">Your key is stored locally in your browser session.</p>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="shimmer-btn w-full h-[52px] bg-gradient-to-r from-primary-container to-secondary-container rounded-full text-white font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-3 shadow-[0_10px_30px_-5px_rgba(99,102,241,0.5)] hover:scale-[1.01] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        Analyze My Career
+                    </button>
+</div>
+</section>
+<!-- Contextual Insight (Bento Style Sub-section) -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 space-y-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="analytics">analytics</span>
+<h3 class="text-white font-bold text-sm">Gap Analysis</h3>
+<p class="text-xs text-gray-500 leading-relaxed">Deep comparison between your current skills and role requirements.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 space-y-3">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+<h3 class="text-white font-bold text-sm">90-Day Plan</h3>
+<p class="text-xs text-gray-500 leading-relaxed">Structured learning path with specific milestones and resources.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 space-y-3">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<h3 class="text-white font-bold text-sm">Interview Prep</h3>
+<p class="text-xs text-gray-500 leading-relaxed">AI-generated questions based on your specific roadmap gaps.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 mt-auto bg-[#07080f] border-t border-white/5">
+<div class="flex flex-col items-center justify-center gap-4 w-full px-4 text-center">
+<div class="text-gray-400 font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-400 text-sm" data-icon="memory">memory</span>
+                CareerCopilot Engine
+            </div>
+<p class="text-xs font-medium tracking-wide text-gray-500 uppercase">
+                AI Career Copilot · Powered by Gemini AI · Your data never leaves your browser
+            </p>
+<div class="flex gap-6">
+<a class="text-gray-600 hover:text-indigo-300 transition-colors text-xs font-medium uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-gray-600 hover:text-indigo-300 transition-colors text-xs font-medium uppercase tracking-widest" href="#">Terms</a>
+<a class="text-gray-600 hover:text-indigo-300 transition-colors text-xs font-medium uppercase tracking-widest" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>
