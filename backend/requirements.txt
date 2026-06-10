@@ -2,3 +2,7 @@ flask
 flask-cors
 PyJWT
 werkzeug
+gunicorn
+Flask-SQLAlchemy
+psycopg2-binary
+python-dotenv

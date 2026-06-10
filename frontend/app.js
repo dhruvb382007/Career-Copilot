@@ -1,7 +1,11 @@
 // ===== Backend API Base URL =====
-const API_BASE = window.location.port === '5000' || window.location.port === ''  
-  ? window.location.origin
-  : 'http://localhost:5000';
+// Determines the backend URL based on whether we are running locally or in production.
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+// Replace this with your actual Railway deployed backend URL when deploying to Vercel
+const PROD_API_URL = 'https://career-copilot-backend.up.railway.app'; // Example
+
+const API_BASE = isLocal ? 'http://localhost:5000' : PROD_API_URL;
 
 // ===== Auth State =====
 let currentUser = null;
